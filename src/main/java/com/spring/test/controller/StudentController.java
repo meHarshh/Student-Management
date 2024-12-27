@@ -28,7 +28,7 @@ public class StudentController {
 	}
 	
 	@PostMapping(value = "/admin/login")
-	private ResponseEntity<ResponseStructure<List<Student>>>  login(@RequestParam String username, @RequestParam String password){
+	private ResponseEntity<ResponseStructure<List<Student>>> login(@RequestParam String username, @RequestParam String password){
 		return studentService.login(username, password);
 	}
 	

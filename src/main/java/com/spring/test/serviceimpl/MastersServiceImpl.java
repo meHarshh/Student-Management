@@ -41,9 +41,4 @@ public class MastersServiceImpl implements MastersService{
 	return new ResponseEntity<ResponseStructure<List<Masters>>>(responseStructure, HttpStatus.OK);
 	}
 
-	
-	
-	
-	
-
 }

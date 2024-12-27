@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +25,7 @@ public class StudentServiceImpl implements StudentService{
 
 	@Override
 	public ResponseEntity<ResponseStructure<Student>> addStudent(Student student) {
-		String username = student.getUserName();
+		String username = student.getUsername();
 		String password = student.getPassword();
 		int studentId = student.getStudentId();
 
@@ -41,7 +40,7 @@ public class StudentServiceImpl implements StudentService{
 		if (!student.getEmail().contains("@") && !student.getEmail().contains(".com")) {
 			throw new InvalidEmailException("Please enter the valid email-id");
 		}
-
+		
 		Student student2 =	studentRepo.save(student);
 
 		String message = "Student ID :" + student.getStudentId() + " Added Successfully!!";
@@ -128,7 +127,7 @@ public class StudentServiceImpl implements StudentService{
 		student2.setPassportNumber(student.getPassportNumber());
 		student2.setPassportNumber(student.getPassportNumber());
 		student2.setTemporaryAddress(student.getTemporaryAddress());
-		student2.setUserName(student.getUserName());
+		student2.setUsername(student.getUsername());
 
 		Student student3 = studentRepo.save(student2);
 
